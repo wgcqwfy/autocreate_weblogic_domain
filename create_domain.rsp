@@ -1,0 +1,17 @@
+read template from "/usr/local/weblogic/wlserver_10.3/common/templates/domains/wls.jar";
+
+set JavaHome "/usr/java/jdk1.6.0_29/";
+set ServerStartMode "dev";
+
+// Set the listen address and listen port for the Administration Server
+find Server "AdminServer" as AdminServer;
+set AdminServer.ListenAddress "";
+set AdminServer.ListenPort "7004";
+//set AdminServer.SSL.Enabled "true";
+//set AdminServer.SSL.ListenPort "8002";
+
+// use templates default weblogic user
+find User "weblogic" as defuser;
+set defuser.password "weblogic123";
+
+write domain to "/usr/local/weblogic/user_projects/domains/manage_domain";
