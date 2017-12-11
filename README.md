@@ -1,0 +1,2 @@
+# autocreate_weblogic_domain
+自动化创建weblogic domain脚本
